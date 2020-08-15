@@ -1,1 +1,1 @@
-export { RouterComponent } from './Router';
+export { MainRouterComponent } from './MainRouter';
