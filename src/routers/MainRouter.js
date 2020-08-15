@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
-import LoginScreen from '../screens/LoginScreen';
-import NotesList from './NotesList';
+import { Scene, Router } from 'react-native-router-flux';
+import LoginScreen from '../screens';
+import HomeScreen from '../screens';
+import JobsScreen from '../screens';
+import ClientsScreen from '../screens';
+import WalletScreen from '../screens';
+import ProfileScreen from '../screens';
 import { logout } from './actions';
 
 
@@ -12,19 +16,35 @@ export default class RouterComponent extends Component {
             <Router>
                 <Scene key="root" hideNavBar>
                     <Scene key="auth">
-                        <Scene key="login" component={LoginForm} title="Login" initial />
+                        <Scene key="login" component={LoginScreen} title="Login" initial />
                     </Scene>
                     <Scene key="main">
                         <Scene
-                            rightTitle="Add"
                             leftTitle="Logout"
-                            onRight={() => Actions.noteCreate()}
                             onLeft={() => logout()}
-                            key="notes" component={NotesList} title="Minhas Anotações"
+                            key="home" component={HomeScreen} title="Home"
                             initial
                         />
-                        <Scene key="noteCreate" component={CreateNote} title="Criar Anotação" />            
-                        <Scene key="noteEdit" component={NoteEdit} title="Editar Anotação" />   
+                        <Scene 
+                            key="home" 
+                            component={JobsScreen} 
+                            title="Jobs" 
+                        />            
+                        <Scene 
+                            key="clients" 
+                            component={ClientsScreen} 
+                            title="Clients" 
+                        />
+                        <Scene 
+                            key="wallet" 
+                            component={WalletScreen} 
+                            title="Wallet" 
+                        />  
+                        <Scene 
+                            key="profile" 
+                            component={ProfileScreen} 
+                            title="Profile" 
+                        />     
                                         
                     </Scene>
                 </Scene>
