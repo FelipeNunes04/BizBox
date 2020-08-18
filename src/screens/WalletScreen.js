@@ -1,14 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
-export default class ClientsScreen extends React.Component {
+export default function WalletScreen() {
 
-  render() {
-    return (
-      <View>
-         <Text>Hello World</Text>
-      </View>
-    );
-  }
+  return (
+    <SafeAreaView>
+        <Text>Hello World</Text>
+    </SafeAreaView>
+  );
   
 }

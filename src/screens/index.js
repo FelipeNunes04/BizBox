@@ -1,6 +1,7 @@
-export { ClientsScreen } from './ClientsScreen';
-export { HomeScreen } from './HomeScreen';
-export { JobsScreen } from './JobsScreen';
-export { LoginScreen } from './LoginScreen';
-export { ProfileScreen } from './ProfileScreen';
-export { WalletScreen } from './WalletScreen';
+import ClientsScreen from './ClientsScreen';
+import HomeScreen from './HomeScreen';
+import JobsScreen from './JobsScreen';
+import ProfileScreen from './ProfileScreen';
+import WalletScreen from './WalletScreen';
+
+export { ClientsScreen, HomeScreen, JobsScreen, ProfileScreen, WalletScreen };

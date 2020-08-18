@@ -1,54 +1,77 @@
 import React, { Component } from 'react';
+import { StyleSheet, PixelRatio } from 'react-native';
 import { Scene, Router } from 'react-native-router-flux';
-import LoginScreen from '../screens';
-import HomeScreen from '../screens';
-import JobsScreen from '../screens';
-import ClientsScreen from '../screens';
-import WalletScreen from '../screens';
-import ProfileScreen from '../screens';
-import { logout } from './actions';
+import TabIcon from '../components/TabIcon';
 
+import { ClientsScreen, 
+    HomeScreen, 
+    JobsScreen, 
+    ProfileScreen, 
+    WalletScreen } from '../screens';
 
-export default class RouterComponent extends Component {
+export default function RouterComponent() {
     
-    render() {
-        return (
-            <Router>
-                <Scene key="root" hideNavBar>
-                    <Scene key="auth">
-                        <Scene key="login" component={LoginScreen} title="Login" initial />
-                    </Scene>
-                    <Scene key="main">
-                        <Scene
-                            leftTitle="Logout"
-                            onLeft={() => logout()}
-                            key="home" component={HomeScreen} title="Home"
-                            initial
-                        />
-                        <Scene 
-                            key="home" 
-                            component={JobsScreen} 
-                            title="Jobs" 
-                        />            
-                        <Scene 
-                            key="clients" 
-                            component={ClientsScreen} 
-                            title="Clients" 
-                        />
-                        <Scene 
-                            key="wallet" 
-                            component={WalletScreen} 
-                            title="Wallet" 
-                        />  
-                        <Scene 
-                            key="profile" 
-                            component={ProfileScreen} 
-                            title="Profile" 
-                        />     
-                                        
-                    </Scene>
+    return (
+        <Router>
+            <Scene key="root" hideNavBar>
+                <Scene key="main" tabs={true} tabBarStyle={styles.tabBar} default="home">
+                    <Scene
+                        key="home" 
+                        component={HomeScreen} 
+                        hideNavBar
+                        iconName="home"
+                        icon={TabIcon}
+                    />
+                    <Scene 
+                        key="jobs" 
+                        component={JobsScreen} 
+                        hideNavBar
+                        iconName="adjust"
+                        icon={TabIcon}
+                    />            
+                    <Scene 
+                        key="clients" 
+                        component={ClientsScreen} 
+                        hideNavBar
+                        iconName="users"
+                        icon={TabIcon}
+                    />
+                    <Scene 
+                        key="wallet" 
+                        component={WalletScreen} 
+                        hideNavBar
+                        iconName="money"
+                        icon={TabIcon} 
+                    />  
+                    <Scene 
+                        key="profile" 
+                        component={ProfileScreen} 
+                        hideNavBar
+                        iconName="user"
+                        icon={TabIcon}
+                    />     
+                                    
                 </Scene>
-            </Router>
-        );
-    };
+            </Scene>
+        </Router>
+    );
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    tabBar: {
+      borderTopColor: 'darkgrey',
+      borderTopWidth: 1 / PixelRatio.get(),
+      backgroundColor: 'ghostwhite',
+      opacity: 0.98
+    },
+    navigationBarStyle: {
+      backgroundColor: 'red',
+    },
+    navigationBarTitleStyle: {
+      color:'white',
+    },
+  });
