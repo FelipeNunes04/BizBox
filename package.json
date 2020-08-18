@@ -8,15 +8,22 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "react-native-community/async-storage",
     "expo": "~38.0.8",
+    "expo-auth-session": "~1.4.0",
     "expo-splash-screen": "^0.3.1",
     "expo-status-bar": "^1.0.2",
+    "jwt-decode": "^2.2.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-reanimated": "~1.9.0",
+    "react-native-router-flux": "^4.2.0",
+    "react-native-screens": "~2.9.0",
+    "react-native-vector-icons": "^7.0.0",
     "react-native-web": "~0.11.7",
-    "react-redux": "^7.2.1",
-    "redux": "^4.0.5"
+    "uri-scheme": "^1.0.26"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
