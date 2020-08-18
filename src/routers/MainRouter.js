@@ -9,7 +9,7 @@ import { ClientsScreen,
     ProfileScreen, 
     WalletScreen } from '../screens';
 
-export default function RouterComponent() {
+export default function RouterComponent(props) {
     
     return (
         <Router>
@@ -17,7 +17,8 @@ export default function RouterComponent() {
                 <Scene key="main" tabs={true} tabBarStyle={styles.tabBar} default="home">
                     <Scene
                         key="home" 
-                        component={HomeScreen} 
+                        component={HomeScreen}
+                        setCode={props.setCode} 
                         hideNavBar
                         iconName="home"
                         icon={TabIcon}

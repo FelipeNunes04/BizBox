@@ -1,10 +1,11 @@
 import React from 'react';
 import { AsyncStorage, SafeAreaView, StyleSheet, Text, Button } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
 
   const logout = () => {
-    AsyncStorage.removeItem('code')
+    AsyncStorage.removeItem('code');
+    props.setCode('')
   }
 
   return (
