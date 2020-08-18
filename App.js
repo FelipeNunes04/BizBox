@@ -70,7 +70,7 @@ export default function App() {
   }
 
   if (code) {
-    return  <MainRouterComponent setCode={ setCode } />;
+    return  <MainRouterComponent/>;
   }
   else {
     return (
