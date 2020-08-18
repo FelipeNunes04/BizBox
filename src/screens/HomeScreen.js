@@ -4,7 +4,7 @@ import { AsyncStorage, SafeAreaView, StyleSheet, Text, Button } from 'react-nati
 export default function HomeScreen() {
 
   const logout = () => {
-    AsyncStorage.clear()
+    AsyncStorage.removeItem('code')
   }
 
   return (

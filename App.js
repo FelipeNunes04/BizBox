@@ -30,6 +30,7 @@ export default function App() {
   timeout = null;
 
   React.useEffect(() => {
+    getCodeFromStorage()
     try {
       SplashScreen.preventAutoHideAsync();
     } catch (e) {
@@ -48,7 +49,6 @@ export default function App() {
   }
 
   React.useEffect(() => {
-    getCodeFromStorage()
     if (result) {
       if (result.error) {
         Alert.alert(
@@ -70,7 +70,7 @@ export default function App() {
   }
 
   if (code) {
-    return  <MainRouterComponent />;
+    return  <MainRouterComponent setCode={ setCode } />;
   }
   else {
     return (
